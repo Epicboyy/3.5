@@ -208,23 +208,6 @@ def lineBot(op):
                     to = receiver
             else:
                 to = receiver
-            if msg.contentType == 13:
-                if settings["contact"] == True:
-                    msg.contentType = 0
-                    if 'displayName' in msg.contentMetadata:
-                        contact = cl.getContact(msg.contentMetadata["mid"])
-                        try:
-                            cu = cl.getProfileCoverURL(msg.contentMetadata["mid"])
-                        except:
-                            cu = ""
-                            cl.sendMessage(msg.to,"[顯示名稱]:\n" + msg.contentMetadata["顯示名稱"] + "\n[mid]:\n" + msg.contentMetadata["mid"] + "\n[狀態消息]:\n" + contact.statusMessage + "\n[圖片網址]:\nhttp://dl.profile.line-cdn.net/" + contact.pictureStatus + "\n[封面網址]:\n" + str(cu))
-                    else:
-                        contact = cl.getContact(msg.contentMetadata["mid"])
-                        try:
-                            cu = cl.getProfileCoverURL(msg.contentMetadata["mid"])
-                        except:
-                            cu = ""
-                        cl.sendMessage(msg.to,"[顯示名稱]:\n" + contact.displayName + "\n[mid]:\n" + msg.contentMetadata["mid"] + "\n[狀態消息]:\n" + contact.statusMessage + "\n[圖片網址]:\nhttp://dl.profile.line-cdn.net/" + contact.pictureStatus + "\n[封面網址]:\n" + str(cu))
             elif msg.contentType == 16:
                 if settings["timeline"] == True:
                     msg.contentType = 0
