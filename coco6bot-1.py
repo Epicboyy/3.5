@@ -110,7 +110,7 @@ def helpmessageinfo():
 ↪ 「Protectlist」查看保護中的群組
 ╚═〘 Credits By: ©CoCo™  〙
 """
-    return helpMessageinfo
+    return helpmessageinfo
 def helpmessagebot():
     helpMessageBot = """
 ╔═══✪〘 設定 〙✪═══════
